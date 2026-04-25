@@ -2,10 +2,6 @@
 
 > A distributed rate limiter and traffic controller with **4 algorithms implemented from scratch**, Redis-backed distributed state, real-time WebSocket monitoring, and Prometheus metrics.
 
-[![CI](https://github.com/primeljayawardana/nexusguard/actions/workflows/ci.yml/badge.svg)](https://github.com/primeljayawardana/nexusguard/actions)
-[![Node](https://img.shields.io/badge/node-18%2B-green)](https://nodejs.org)
-[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-
 ---
 
 ## What is this?
@@ -25,12 +21,12 @@ It ships as:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    Incoming HTTP Request                         │
+│                    Incoming HTTP Request                        │
 └──────────────────────────┬──────────────────────────────────────┘
                            │
 ┌──────────────────────────▼──────────────────────────────────────┐
-│                      NexusGuard Middleware                       │
-│  1. keyGenerator(req)  → "user-42" / "ip:1.2.3.4"              │
+│                      NexusGuard Middleware                      │
+│  1. keyGenerator(req)  → "user-42" / "ip:1.2.3.4"               │
 │  2. algorithm.check(key) → {allowed, remaining, retryAfter}     │
 │  3. Inject rate limit headers (X-RateLimit-Remaining, etc.)     │
 │  4. Allow → next() / Deny → 429 + Retry-After                   │
@@ -387,5 +383,4 @@ nexusguard/
 ---
 
 ## License
-
-MIT — see [LICENSE](LICENSE).
+Primel Jayawardana 
