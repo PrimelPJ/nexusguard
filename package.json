@@ -1,0 +1,28 @@
+{
+  "name": "nexusguard",
+  "version": "1.0.0",
+  "description": "Distributed rate limiter and traffic controller with multiple algorithms, Redis backing, and real-time monitoring",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest --runInBand",
+    "test:coverage": "jest --coverage",
+    "load-test": "node load-test/loadTest.js",
+    "lint": "eslint src/ tests/"
+  },
+  "keywords": ["rate-limiter", "api-gateway", "distributed", "redis", "middleware"],
+  "author": "Primel Jayawardana",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "ioredis": "^5.3.2",
+    "prom-client": "^15.1.2",
+    "ws": "^8.17.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "supertest": "^7.0.0"
+  }
+}
