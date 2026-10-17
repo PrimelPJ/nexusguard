@@ -19,6 +19,13 @@ const ALGORITHMS = {
   leaky_bucket: LeakyBucket,
 };
 
+const DEFAULT_LIMITS = {
+  token_bucket:   { capacity: 100, refillRate: 10, refillInterval: 1000 },
+  sliding_window: { max: 100, windowMs: 60000 },
+  fixed_window:   { max: 100, windowMs: 60000 },
+  leaky_bucket:   { capacity: 100, drainRate: 10, drainInterval: 1000 },
+};
+
 class NexusGuard {
   /**
    * @param {object} config
@@ -164,4 +171,4 @@ function createMetrics() {
   return { allowed: 0, blocked: 0, errors: 0 };
 }
 
-module.exports = { NexusGuard, createMultiGuard, ALGORITHMS };
+module.exports = { NexusGuard, createMultiGuard, ALGORITHMS, DEFAULT_LIMITS };
