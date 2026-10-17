@@ -83,6 +83,7 @@ class NexusGuard {
 
       // Attach rate limit headers (RFC 6585 style)
       res.setHeader("X-RateLimit-Algorithm", result.algorithm);
+      res.setHeader("X-RateLimit-Limit", this._algo.limit ?? this._algo.capacity);
       res.setHeader("X-RateLimit-Remaining", result.remaining);
       if (result.windowResetAt) {
         res.setHeader("X-RateLimit-Reset", Math.ceil(result.windowResetAt / 1000));
