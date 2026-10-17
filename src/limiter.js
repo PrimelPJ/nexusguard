@@ -32,6 +32,7 @@ const TRUSTED_PROXY_HEADERS = [
   "cf-connecting-ip",
   "x-client-ip",
   "fastly-client-ip",
+  "true-client-ip",
 ];
 
 class NexusGuard {
