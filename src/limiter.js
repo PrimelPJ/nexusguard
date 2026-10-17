@@ -26,6 +26,14 @@ const DEFAULT_LIMITS = {
   leaky_bucket:   { capacity: 100, drainRate: 10, drainInterval: 1000 },
 };
 
+const TRUSTED_PROXY_HEADERS = [
+  "x-forwarded-for",
+  "x-real-ip",
+  "cf-connecting-ip",
+  "x-client-ip",
+  "fastly-client-ip",
+];
+
 class NexusGuard {
   /**
    * @param {object} config
