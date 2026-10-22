@@ -34,6 +34,8 @@ const TRUSTED_PROXY_HEADERS = [
   "fastly-client-ip",
   "true-client-ip",
   "x-cluster-client-ip",
+  "fly-client-ip",
+  "x-envoy-external-address",
 ];
 
 class NexusGuard {
