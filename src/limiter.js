@@ -39,6 +39,8 @@ const TRUSTED_PROXY_HEADERS = [
   "x-forwarded",
   "x-original-forwarded-for",
   "x-proxyuser-ip",
+  "x-nf-client-connection-ip",
+  "x-azure-socketip",
 ];
 
 class NexusGuard {
