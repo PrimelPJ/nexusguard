@@ -166,7 +166,7 @@ const server = http.createServer(app);
 const wss = new WebSocket.Server({ server, path: "/metrics/ws" });
 
 // Broadcast metrics every second to all connected dashboards
-setInterval(() => {
+const broadcastInterval = setInterval(() => {
   if (wss.clients.size === 0) return;
 
   const payload = JSON.stringify({
@@ -184,6 +184,7 @@ setInterval(() => {
     if (ws.readyState === WebSocket.OPEN) ws.send(payload);
   });
 }, 1000);
+broadcastInterval.unref(); // don't keep the process alive on its own
 
 wss.on("connection", (ws) => {
   console.log("[WS] Dashboard client connected");
@@ -192,7 +193,8 @@ wss.on("connection", (ws) => {
 
 // ---- Start ----
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
+// Only listen when run directly (node src/server.js), so tests can import the app.
+if (require.main === module) server.listen(PORT, () => {
   console.log(`\n╔═══════════════════════════════════════╗`);
   console.log(`║          NexusGuard v1.0.0            ║`);
   console.log(`╠═══════════════════════════════════════╣`);
