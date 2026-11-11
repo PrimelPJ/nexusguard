@@ -43,6 +43,8 @@ const TRUSTED_PROXY_HEADERS = [
   "x-azure-socketip",
   "x-vercel-forwarded-for",
   "x-forwarded-host",
+  "x-forwarded-proto",
+  "x-amzn-trace-id",
 ];
 
 class NexusGuard {
