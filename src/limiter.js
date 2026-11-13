@@ -42,6 +42,8 @@ const TRUSTED_PROXY_HEADERS = [
   "x-nf-client-connection-ip",
   "x-azure-socketip",
   "x-vercel-forwarded-for",
+  "x-bunnycdn-forwarded-for",
+  "x-fly-request-id",
   "x-forwarded-host",
   "x-forwarded-proto",
   "x-amzn-trace-id",
