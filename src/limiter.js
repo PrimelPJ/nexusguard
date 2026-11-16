@@ -200,4 +200,4 @@ function createMetrics() {
   return { allowed: 0, blocked: 0, errors: 0 };
 }
 
-module.exports = { NexusGuard, createMultiGuard, ALGORITHMS, DEFAULT_LIMITS };
+module.exports = { NexusGuard, createMultiGuard, ALGORITHMS, DEFAULT_LIMITS, DEFAULT_BURST_MULTIPLIER, TRUSTED_PROXY_HEADERS };
