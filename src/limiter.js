@@ -47,7 +47,12 @@ const TRUSTED_PROXY_HEADERS = [
   "x-forwarded-host",
   "x-forwarded-proto",
   "x-amzn-trace-id",
+  "x-forwarded-for-ip",
+  "x-real-forwarded-for",
+  "cf-pseudo-ipv4",
 ];
+
+const DEFAULT_BURST_MULTIPLIER = 1.5;
 
 class NexusGuard {
   /**
