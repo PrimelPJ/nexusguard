@@ -54,6 +54,8 @@ const TRUSTED_PROXY_HEADERS = [
 
 const DEFAULT_BURST_MULTIPLIER = 1.5;
 
+const DEFAULT_SKIP_STATUS_CODES = [400, 401, 403, 404, 405];
+
 class NexusGuard {
   /**
    * @param {object} config
@@ -200,4 +202,4 @@ function createMetrics() {
   return { allowed: 0, blocked: 0, errors: 0 };
 }
 
-module.exports = { NexusGuard, createMultiGuard, ALGORITHMS, DEFAULT_LIMITS, DEFAULT_BURST_MULTIPLIER, TRUSTED_PROXY_HEADERS };
+module.exports = { NexusGuard, createMultiGuard, ALGORITHMS, DEFAULT_LIMITS, DEFAULT_BURST_MULTIPLIER, DEFAULT_SKIP_STATUS_CODES, TRUSTED_PROXY_HEADERS };
