@@ -50,6 +50,8 @@ const TRUSTED_PROXY_HEADERS = [
   "x-forwarded-for-ip",
   "x-real-forwarded-for",
   "cf-pseudo-ipv4",
+  "x-bb-ip",
+  "x-original-ip",
 ];
 
 const DEFAULT_BURST_MULTIPLIER = 1.5;
