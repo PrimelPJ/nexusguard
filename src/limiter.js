@@ -50,11 +50,13 @@ const TRUSTED_PROXY_HEADERS = [
   "x-forwarded-for-ip",
   "x-real-forwarded-for",
   "cf-pseudo-ipv4",
+  "x-bb-ip",
+  "x-original-ip",
 ];
 
 const DEFAULT_BURST_MULTIPLIER = 1.5;
 
-const DEFAULT_SKIP_STATUS_CODES = [400, 401, 403, 404, 405];
+const DEFAULT_SKIP_STATUS_CODES = [400, 401, 403, 404, 405, 408];
 
 class NexusGuard {
   /**
