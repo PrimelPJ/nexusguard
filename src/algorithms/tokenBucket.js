@@ -31,6 +31,8 @@ class TokenBucket {
   constructor({ capacity, refillRate, tokensPerReq = 1 }, store) {
     if (capacity <= 0) throw new Error("capacity must be > 0");
     if (refillRate <= 0) throw new Error("refillRate must be > 0");
+    if (tokensPerReq <= 0) throw new Error("tokensPerReq must be > 0");
+    if (tokensPerReq > capacity) throw new Error("tokensPerReq must not exceed capacity");
 
     this.capacity = capacity;
     this.refillRate = refillRate;       // tokens/second
