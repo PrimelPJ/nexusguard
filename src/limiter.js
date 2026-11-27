@@ -55,6 +55,7 @@ const TRUSTED_PROXY_HEADERS = [
   "cf-pseudo-ipv4",
   "x-bb-ip",
   "x-original-ip",
+  "x-appengine-user-ip",
 ];
 
 const DEFAULT_BURST_MULTIPLIER = 1.5;
