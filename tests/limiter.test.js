@@ -1,7 +1,7 @@
 "use strict";
 
 const MemoryStore = require("../src/store/memoryStore");
-const { NexusGuard, createMultiGuard } = require("../src/limiter");
+const { NexusGuard, createMultiGuard, TRUSTED_PROXY_HEADERS } = require("../src/limiter");
 
 function mockRes() {
   const res = { headers: {}, statusCode: 200, body: null };
@@ -153,5 +153,11 @@ describe("createMultiGuard", () => {
     expect(res.statusCode).toBe(429);
     expect(res.headers["X-RateLimit-Violated-Rule"]).toBe("fixed_window");
     expect(res.body.violatedRule).toBe("fixed_window");
+  });
+});
+
+describe("TRUSTED_PROXY_HEADERS", () => {
+  test("includes the App Engine client IP header", () => {
+    expect(TRUSTED_PROXY_HEADERS).toContain("x-appengine-user-ip");
   });
 });
